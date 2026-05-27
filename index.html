@@ -8,6 +8,25 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1485812036355323');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1485812036355323&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
   <style>
     *,
     *::before,
@@ -1697,7 +1716,7 @@
       const payload = {
         thoiGian,                          // Thời gian
         ten: name,                          // Tên
-        sdt: "'"+phone,                         // SĐT
+        sdt: "'" + phone,                         // SĐT
         diaChi: address,                    // Địa chỉ
         sanPham: comboInfo.label,           // Sản phẩm
         giaBan: comboInfo.giaBan,           // Giá bán
