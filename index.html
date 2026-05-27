@@ -1678,8 +1678,21 @@
       setTimeout(() => t.classList.remove('show'), 4000);
     }
 
+    // ── Đọc UTM từ URL (lưu vào sessionStorage để giữ qua redirect) ──
+    (function () {
+      const p = new URLSearchParams(window.location.search);
+      const keys = ['utm_campaign', 'utm_content', 'utm_source', 'utm_medium', 'utm_term', 'fbclid'];
+      keys.forEach(k => {
+        if (p.get(k)) sessionStorage.setItem(k, p.get(k));
+      });
+    })();
+
+    function getUtm(key) {
+      return sessionStorage.getItem(key) || '';
+    }
+
     // ── Submit ──
-    const SHEET_URL = 'https://script.google.com/macros/s/AKfycby5k_psX4rOS0t2UM53g3O23FApgP0r8cM41bR9Moa8J8krpmQIXXyJ-LqoNVAr_zUR/exec';
+    const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzBNZFaL7s18EXSXERdTF1Pno8SAk-yQk2Gfr4yeFIMAoNlDlyydr8EIEqpuf83lf_Z/exec';
 
     async function submitOrder() {
       const name = document.getElementById('fname').value.trim();
@@ -1722,7 +1735,9 @@
         giaBan: comboInfo.giaBan,           // Giá bán
         giaCost: comboInfo.giaCost,         // Giá cost
         ship: comboInfo.ship,               // Ship
-        ghiChu: note                        // Ghi chú (bonus)
+        ghiChu: note,                       // Ghi chú
+        camp: getUtm('utm_campaign'),       // Tên camp FB (utm_campaign)
+        adId: getUtm('utm_content')         // ID quảng cáo FB (utm_content)
       };
 
       const resetBtn = () => {
