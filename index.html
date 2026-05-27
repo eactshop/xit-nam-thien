@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>PetDerma Care Spray – Xịt Chăm Sóc Da Chó Mèo</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #1a7a3c;
+      --green-dark: #145f2e;
+      --green-light: #e8f5ec;
+      --green-mid: #2d9e55;
+      --red: #d62929;
+      --gold: #c8920a;
+      --gold-light: #fdf3d6;
+      --text: #1a1a1a;
+      --text-muted: #555;
+      --border: #d8e8dd;
+      --bg: #f7faf8;
+      --white: #ffffff;
+      --radius: 14px;
+      --shadow: 0 4px 20px rgba(26, 122, 60, 0.10);
+    }
+
+    html {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* Max-width mobile container */
+    body {
+      max-width: 480px;
+      margin: 0 auto;
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      background: var(--white);
+      border-bottom: 1.5px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    }
+
+    .nav-logo {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 1.15rem;
+      color: var(--green);
+    }
+
+    .nav-logo span {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .nav-logo em {
+      font-style: normal;
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: .9rem;
+    }
+
+    .btn-buy-nav {
+      background: var(--green);
+      color: #fff;
+      border: none;
+      padding: 9px 16px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: .82rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 3px 12px rgba(26, 122, 60, .3);
+      transition: background .2s;
+    }
+
+    .btn-buy-nav:hover {
+      background: var(--green-dark);
+    }
+
+    /* ── CAROUSEL HERO ── */
+    .hero-carousel {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      touch-action: pan-y;
+      background: #e8f5ec;
+    }
+
+    /* Slides track */
+    .carousel-track {
+      display: flex;
+      transition: transform .42s cubic-bezier(.4, 0, .2, 1);
+      will-change: transform;
+    }
+
+    /* Each slide */
+    .carousel-slide {
+      min-width: 100%;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(155deg, #e8f5ec 0%, #c8e8d2 55%, #a8d8b8 100%);
+    }
+
+    .carousel-slide::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 25%, rgba(255, 255, 255, .55) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Slide inner layout */
+    .slide-inner {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: stretch;
+      min-height: 390px;
+    }
+
+    /* Left text column */
+    .slide-text {
+      flex: 1;
+      padding: 26px 0 24px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      padding: 5px 13px;
+      border-radius: 4px;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .5px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      align-self: flex-start;
+    }
+
+    .hero-title {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+
+    .hero-title .big {
+      display: block;
+      font-size: 1.85rem;
+      font-weight: 900;
+      color: var(--red);
+      line-height: 1.1;
+      text-shadow: 1px 2px 0 rgba(0, 0, 0, .08);
+    }
+
+    .hero-subtitle {
+      font-size: .78rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .hero-features {
+      list-style: none;
+      margin-bottom: 16px;
+    }
+
+    .hero-features li {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: .76rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .hero-features li .ico {
+      font-size: 1rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-hero {
+      background: var(--green);
+      color: #fff;
+      border: none;
+      padding: 11px 18px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: .82rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 5px 18px rgba(26, 122, 60, .35);
+      animation: pulse 2.5s infinite;
+      white-space: nowrap;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        box-shadow: 0 5px 18px rgba(26, 122, 60, .35);
+      }
+
+      50% {
+        box-shadow: 0 5px 28px rgba(26, 122, 60, .55);
+      }
+    }
+
+    .safe-badge {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: .66rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1.3;
+    }
+
+    .safe-badge .shield {
+      font-size: 1.1rem;
+    }
+
+    /* Right image column */
+    .slide-img-wrap {
+      width: 170px;
+      flex-shrink: 0;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .slide-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center bottom;
+      display: block;
+    }
+
+    /* Placeholder when no real image */
+    .slide-img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      opacity: .35;
+    }
+
+    /* Limited badge */
+    .limited-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 5;
+      width: 68px;
+      height: 68px;
+      background: var(--red);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 900;
+      font-size: .52rem;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: .3px;
+      border: 3px solid var(--gold);
+      box-shadow: 0 4px 16px rgba(214, 41, 41, .35);
+      animation: rock 8s ease-in-out infinite;
+    }
+
+    .limited-badge strong {
+      font-size: .8rem;
+      line-height: 1.1;
+    }
+
+    @keyframes rock {
+
+      0%,
+      100% {
+        transform: rotate(-4deg)
+      }
+
+      50% {
+        transform: rotate(4deg)
+      }
+    }
+
+    /* Dots */
+    .carousel-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 10;
+    }
+
+    .carousel-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(26, 122, 60, .25);
+      transition: all .3s;
+      cursor: pointer;
+      border: none;
+      padding: 0;
+    }
+
+    .carousel-dot.active {
+      background: var(--green);
+      width: 20px;
+      border-radius: 4px;
+    }
+
+    /* Arrow buttons */
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, .8);
+      border: none;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      font-size: .85rem;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+      color: var(--green);
+      font-weight: 900;
+      transition: background .2s;
+    }
+
+    .carousel-arrow:hover {
+      background: rgba(255, 255, 255, .95);
+    }
+
+    .carousel-arrow.prev {
+      left: 8px;
+    }
+
+    .carousel-arrow.next {
+      right: 8px;
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 0;
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      margin: 16px 14px;
+      padding: 0;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: 14px 6px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+      font-size: .65rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      line-height: 1.3;
+    }
+
+    .trust-item:last-child {
+      border-right: none;
+    }
+
+    .trust-item .ico {
+      font-size: 1.4rem;
+    }
+
+    /* ── SECTION ── */
+    .section {
+      padding: 22px 16px;
+    }
+
+    .section-title {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 1.05rem;
+      color: var(--green);
+      text-align: center;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    /* ── PRODUCT DESC ── */
+    .desc-box {
+      background: var(--green-light);
+      border-radius: var(--radius);
+      padding: 16px;
+      border: 1.5px solid var(--border);
+    }
+
+    .desc-box p {
+      font-size: .82rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+
+    .desc-list {
+      list-style: none;
+    }
+
+    .desc-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .desc-list li::before {
+      content: '✅';
+      font-size: .85rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── REVIEWS ── */
+    .reviews-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .review-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .review-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .review-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--green-light);
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .review-name {
+      font-weight: 800;
+      font-size: .88rem;
+    }
+
+    .stars {
+      color: #f5a623;
+      font-size: .85rem;
+      letter-spacing: 1px;
+    }
+
+    .review-text {
+      font-size: .8rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── FORM ── */
+    .form-section {
+      background: var(--green-light);
+      padding: 22px 16px;
+      border-top: 2px solid var(--border);
+    }
+
+    .form-wrap {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 18px;
+      border: 1.5px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .form-product-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      background: var(--green-light);
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    .form-product-icon {
+      font-size: 2.5rem;
+    }
+
+    .form-product-info strong {
+      display: block;
+      font-size: .9rem;
+      font-weight: 800;
+      color: var(--green);
+    }
+
+    .form-product-info span {
+      font-size: .75rem;
+      color: var(--text-muted);
+    }
+
+    .form-group {
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .form-group .form-ico {
+      position: absolute;
+      left: 13px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1rem;
+      color: #aaa;
+      pointer-events: none;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 13px 14px 13px 38px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: .88rem;
+      color: var(--text);
+      background: #fff;
+      outline: none;
+      transition: border .2s;
+    }
+
+    .form-group textarea {
+      padding-left: 14px;
+      resize: none;
+      min-height: 70px;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--green);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #bbb;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--green);
+      color: #fff;
+      border: none;
+      padding: 15px;
+      border-radius: 50px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 5px 20px rgba(26, 122, 60, .35);
+      transition: background .2s, transform .1s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      animation: pulse 2.5s infinite;
+    }
+
+    .btn-submit:hover {
+      background: var(--green-dark);
+    }
+
+    .btn-submit:active {
+      transform: scale(.98);
+    }
+
+    /* ── SUCCESS TOAST ── */
+    .toast {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-120px);
+      background: var(--green);
+      color: #fff;
+      padding: 13px 22px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: .9rem;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .2);
+      z-index: 9999;
+      transition: transform .4s cubic-bezier(.34, 1.56, .64, 1);
+      white-space: nowrap;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ── BOTTOM TRUST ── */
+    .bottom-trust {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding: 18px 16px;
+      background: #fff;
+      border-top: 1.5px solid var(--border);
+    }
+
+    .bt-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+
+    .bt-item .ico {
+      font-size: 1.4rem;
+      color: var(--green);
+      flex-shrink: 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--green-dark);
+      color: #fff;
+      text-align: center;
+      padding: 18px 16px;
+    }
+
+    footer strong {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      font-weight: 900;
+    }
+
+    footer p {
+      font-size: .72rem;
+      opacity: .8;
+      margin-top: 5px;
+      line-height: 1.6;
+    }
+
+    .slide-inner__img {
+      width: 100%;
+    }
+
+    .desc-img {
+      width: 100%
+    }
+
+    /* ── FLOATING CTA ── */
+    .float-cta {
+      position: fixed;
+      bottom: 18px;
+      right: 16px;
+      z-index: 200;
+      background: var(--red);
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: .85rem;
+      box-shadow: 0 6px 22px rgba(214, 41, 41, .45);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      animation: float-bob 2s ease-in-out infinite;
+    }
+
+    @keyframes float-bob {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-5px)
+      }
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      background: var(--white);
+      border-bottom: 1.5px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
+    }
+
+    .nav-logo {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 1.15rem;
+      color: var(--green);
+    }
+
+    .nav-logo span {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .nav-logo em {
+      font-style: normal;
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: .9rem;
+    }
+
+    .btn-buy-nav {
+      background: var(--green);
+      color: #fff;
+      border: none;
+      padding: 9px 16px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: .82rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 3px 12px rgba(26, 122, 60, .3);
+      transition: background .2s;
+      animation: float-bob .7s ease-in-out infinite;
+    }
+
+    .btn-buy-nav:hover {
+      background: var(--green-dark);
+    }
+
+    /* SECTION */
+    .form-section {
+      background: var(--green-light);
+      padding: 22px 16px;
+      border-top: 2px solid var(--border);
+    }
+
+    .section-title {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 1.05rem;
+      color: var(--green);
+      text-align: center;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    /* FORM WRAP */
+    .form-wrap {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 18px;
+      border: 1.5px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .form-product-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      background: var(--green-light);
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    .form-product-icon {
+      font-size: 2.5rem;
+    }
+
+    .form-product-info strong {
+      display: block;
+      font-size: .9rem;
+      font-weight: 800;
+      color: var(--green);
+    }
+
+    .form-product-info span {
+      font-size: .75rem;
+      color: var(--text-muted);
+    }
+
+    /* COMBO */
+    .block-label {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: .82rem;
+      color: var(--green-dark);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .combo-options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .combo-option {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .combo-option input[type=radio] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .combo-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      background: #fff;
+      transition: all .2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .combo-option input[type=radio]:checked~.combo-card {
+      border-color: var(--green);
+      background: var(--green-light);
+      box-shadow: 0 2px 14px rgba(26, 122, 60, .18);
+    }
+
+    .combo-radio {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      flex-shrink: 0;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .2s;
+      background: #fff;
+    }
+
+    .combo-option input[type=radio]:checked~.combo-card .combo-radio {
+      border-color: var(--green);
+      background: var(--green);
+    }
+
+    .combo-radio::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #fff;
+      display: none;
+    }
+
+    .combo-option input[type=radio]:checked~.combo-card .combo-radio::after {
+      display: block;
+    }
+
+    .combo-info {
+      flex: 1;
+    }
+
+    .combo-name {
+      font-weight: 800;
+      font-size: .88rem;
+      color: var(--text);
+      margin-bottom: 3px;
+    }
+
+    .combo-price {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 1.05rem;
+      color: var(--red);
+      line-height: 1;
+    }
+
+    .combo-ship {
+      font-size: .7rem;
+      font-weight: 700;
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .combo-ship.free {
+      color: var(--green);
+    }
+
+    .combo-ship.paid {
+      color: var(--text-muted);
+    }
+
+    .combo-gift {
+      margin-top: 5px;
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .best-badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: var(--gold);
+      color: #fff;
+      font-size: .6rem;
+      font-weight: 900;
+      padding: 3px 9px;
+      border-radius: 0 10px 0 10px;
+      letter-spacing: .3px;
+      text-transform: uppercase;
+    }
+
+    .hot-badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: var(--red);
+      color: #fff;
+      font-size: .6rem;
+      font-weight: 900;
+      padding: 3px 9px;
+      border-radius: 0 10px 0 10px;
+      letter-spacing: .3px;
+      text-transform: uppercase;
+    }
+
+    /* DIVIDER */
+    .form-divider {
+      border: none;
+      border-top: 1.5px dashed var(--border);
+      margin: 16px 0;
+    }
+
+    /* FORM GROUP */
+    .form-group {
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .form-group .form-ico {
+      position: absolute;
+      left: 13px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1rem;
+      color: #aaa;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 13px 14px 13px 38px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: .88rem;
+      color: var(--text);
+      background: #fff;
+      outline: none;
+      transition: border .2s;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 13px center;
+      padding-right: 32px;
+      cursor: pointer;
+    }
+
+    .form-group select:disabled {
+      background-color: #f5f5f5;
+      color: #bbb;
+      cursor: not-allowed;
+    }
+
+    .form-group textarea {
+      padding-left: 14px;
+      resize: none;
+      min-height: 70px;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--green);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #bbb;
+    }
+
+    /* Loading spinner inside select */
+    .select-loading {
+      position: relative;
+    }
+
+    .select-loading::after {
+      content: '';
+      position: absolute;
+      right: 36px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      border: 2px solid var(--border);
+      border-top-color: var(--green);
+      border-radius: 50%;
+      animation: spin .6s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: translateY(-50%) rotate(360deg);
+      }
+    }
+
+    /* ADDRESS GRID */
+    .addr-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .addr-grid .form-group {
+      margin-bottom: 0;
+    }
+
+    /* SUBMIT */
+    .btn-submit {
+      width: 100%;
+      background: var(--green);
+      color: #fff;
+      border: none;
+      padding: 15px;
+      border-radius: 50px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 5px 20px rgba(26, 122, 60, .35);
+      transition: background .2s, transform .1s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      animation: pulse 2.5s infinite;
+      margin-top: 6px;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        box-shadow: 0 5px 20px rgba(26, 122, 60, .35);
+      }
+
+      50% {
+        box-shadow: 0 5px 30px rgba(26, 122, 60, .55);
+      }
+    }
+
+    .btn-submit:hover {
+      background: var(--green-dark);
+    }
+
+    .btn-submit:active {
+      transform: scale(.98);
+    }
+
+    .btn-submit:disabled {
+      opacity: .7;
+      cursor: not-allowed;
+      animation: none;
+    }
+
+    /* COMBO IMAGE PREVIEW */
+    .combo-img-preview {
+      margin-top: 12px;
+      margin-bottom: 4px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 2px solid var(--border);
+      background: var(--green-light);
+      transition: all .3s ease;
+      display: none;
+    }
+
+    .combo-img-preview.visible {
+      display: block;
+    }
+
+    .combo-img-preview img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .combo-img-label {
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      text-align: center;
+      padding: 7px 10px 9px;
+      background: var(--green-light);
+      letter-spacing: .2px;
+    }
+
+    /* BOTTOM TRUST */
+    .bottom-trust {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding: 18px 16px;
+      background: #fff;
+      border-top: 1.5px solid var(--border);
+    }
+
+    .bt-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+
+    .bt-item .ico {
+      font-size: 1.4rem;
+      color: var(--green);
+      flex-shrink: 0;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--green-dark);
+      color: #fff;
+      text-align: center;
+      padding: 18px 16px;
+    }
+
+    footer strong {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      font-weight: 900;
+    }
+
+    footer p {
+      font-size: .72rem;
+      opacity: .8;
+      margin-top: 5px;
+      line-height: 1.6;
+    }
+
+    /* FLOATING CTA */
+    .float-cta {
+      position: fixed;
+      bottom: 18px;
+      right: 16px;
+      z-index: 200;
+      background: var(--red);
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: .85rem;
+      box-shadow: 0 6px 22px rgba(214, 41, 41, .45);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      animation: float-bob .7s ease-in-out infinite;
+    }
+
+    @keyframes float-bob {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    /* TOAST */
+    .toast {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-120px);
+      background: var(--green);
+      color: #fff;
+      padding: 13px 22px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: .9rem;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .2);
+      z-index: 9999;
+      transition: transform .4s cubic-bezier(.34, 1.56, .64, 1);
+      white-space: nowrap;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">PetDerma <span>Care</span> <em>Spray</em></div>
+    <button class="btn-buy-nav" onclick="scrollToForm()">🛒 MUA NGAY</button>
+  </nav>
+
+  <!-- HERO CAROUSEL -->
+  <section class="hero-carousel" id="hero-carousel">
+    <div class="carousel-track" id="carousel-track">
+
+      <!-- SLIDE 1 – Main hero (text + placeholder image) -->
+      <div class="carousel-slide">
+        <div class="slide-inner" onclick="scrollToForm()">
+          <img src="./img/1 1.png" alt="" class="slide-inner__img">
+        </div>
+      </div>
+    </div><!-- /track -->
+
+    <!-- Dots -->
+    <div class="carousel-dots" id="carousel-dots"></div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-item"><span class="ico">🌿</span>Dịu nhẹ,<br>an toàn</div>
+    <div class="trust-item"><span class="ico">✚</span>Dùng hàng ngày<br>hiệu quả</div>
+    <div class="trust-item"><span class="ico">🐾</span>An toàn<br>chó mèo</div>
+    <div class="trust-item"><span class="ico">🛡️</span>Không cồn<br>Không Paraben</div>
+  </div>
+
+  <!-- PRODUCT DESC -->
+  <section class="section">
+    <div class="section-title">🐾 MÔ TẢ SẢN PHẨM 🐾</div>
+    <img src="./img/9.png" alt="" class="desc-img">
+    <img src="./img/3.png" alt="" class="desc-img">
+    <img src="./img/4.png" alt="" class="desc-img">
+    <img src="./img/5.png" alt="" class="desc-img">
+    <img src="./img/6.png" alt="" class="desc-img">
+    <img src="./img/7.png" alt="" class="desc-img">
+    <img src="./img/8.png" alt="" class="desc-img">
+  </section>
+  <!-- ORDER FORM -->
+  <section class="form-section" id="order-form">
+    <div class="section-title">🐾 ĐẶT HÀNG NGAY 🐾</div>
+    <div class="form-wrap">
+
+      <!-- Product -->
+      <div class="form-product-row">
+        <div class="form-product-icon">🐾</div>
+        <div class="form-product-info">
+          <strong>PetDerma Care Spray</strong>
+          <span>500ml – Công thức Nhật Bản 🇯🇵</span>
+        </div>
+      </div>
+
+
+
+      <hr class="form-divider">
+
+      <!-- CUSTOMER INFO -->
+      <div class="block-label">👤 Thông tin người nhận</div>
+
+      <div class="form-group">
+        <span class="form-ico">👤</span>
+        <input type="text" id="fname" placeholder="Họ và tên" required>
+      </div>
+      <div class="form-group">
+        <span class="form-ico">📞</span>
+        <input type="tel" id="fphone" placeholder="Số điện thoại" required>
+      </div>
+
+      <hr class="form-divider">
+
+      <!-- ADDRESS -->
+      <div class="block-label">📍 Địa chỉ giao hàng</div>
+
+      <div class="addr-grid">
+        <div class="form-group" id="wrap-tinh">
+          <span class="form-ico">🏙️</span>
+          <select id="sel-tinh" onchange="onTinhChange()">
+            <option value="">Tỉnh / Thành</option>
+          </select>
+        </div>
+        <div class="form-group" id="wrap-huyen">
+          <span class="form-ico">🏘️</span>
+          <select id="sel-huyen" onchange="onHuyenChange()" disabled>
+            <option value="">Quận / Huyện</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group" id="wrap-xa">
+        <span class="form-ico">🏡</span>
+        <select id="sel-xa" disabled>
+          <option value="">Phường / Xã</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <span class="form-ico">📝</span>
+        <input type="text" id="fstreet" placeholder="Số nhà, tên đường cụ thể">
+      </div>
+      <!-- COMBO -->
+      <div class="block-label">🛒 Chọn combo</div>
+      <div class="combo-options">
+        <label class="combo-option">
+          <input type="radio" name="combo" value="1chai" data-label="1 chai – 199.000đ (+20k ship)">
+          <div class="combo-card">
+            <div class="combo-radio"></div>
+            <div class="combo-info">
+              <div class="combo-name">1 chai</div>
+              <div class="combo-price">199.000đ</div>
+              <div class="combo-ship paid">🚚 Phí ship 20.000đ</div>
+            </div>
+          </div>
+        </label>
+
+        <label class="combo-option">
+          <input type="radio" name="combo" value="2chai" data-label="2 chai – 369.000đ (miễn ship + tặng sữa tắm)"
+            checked>
+          <div class="combo-card">
+            <div class="hot-badge">🔥 BÁN CHẠY NHẤT</div>
+            <div class="combo-radio"></div>
+            <div class="combo-info">
+              <div class="combo-name">2 chai</div>
+              <div class="combo-price">369.000đ</div>
+              <div class="combo-ship free">✅ Miễn phí ship</div>
+              <div class="combo-gift">🎁 Tặng 1 chai sữa tắm thú cưng</div>
+            </div>
+          </div>
+        </label>
+
+        <label class="combo-option">
+          <input type="radio" name="combo" value="3chai" data-label="3 chai – 499.000đ (miễn ship + tặng xịt ve rận)">
+          <div class="combo-card">
+            <div class="combo-radio"></div>
+            <div class="combo-info">
+              <div class="combo-name">3 chai</div>
+              <div class="combo-price">499.000đ</div>
+              <div class="combo-ship free">✅ Miễn phí ship</div>
+              <div class="combo-gift">🎁 Tặng 1 chai xịt ve rận</div>
+            </div>
+          </div>
+        </label>
+
+      </div>
+      <!-- COMBO IMAGE PREVIEW -->
+      <div class="combo-img-preview" id="combo-img-wrap">
+        <img id="combo-img" src="" alt="Ảnh combo">
+        <div class="combo-img-label" id="combo-img-label"></div>
+      </div>
+
+      <div class="form-group">
+        <textarea id="fnote" placeholder="Ghi chú đơn hàng (không bắt buộc)"></textarea>
+      </div>
+
+      <button class="btn-submit" id="btn-submit" onclick="submitOrder()">
+        🛒 ĐẶT HÀNG NGAY
+      </button>
+
+    </div>
+  </section>
+
+  <!-- BOTTOM TRUST -->
+  <div class="bottom-trust">
+    <div class="bt-item"><span class="ico">🚚</span>Giao hàng toàn quốc</div>
+    <div class="bt-item"><span class="ico">🔍</span>Kiểm tra hàng trước khi thanh toán</div>
+    <div class="bt-item"><span class="ico">🔄</span>Đổi trả 7 ngày nếu có lỗi</div>
+    <div class="bt-item"><span class="ico">📞</span>Tư vấn miễn phí 24/7</div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <strong>PetDerma Care Spray</strong>
+    <p>🐾 Chăm sóc bé cưng – Yêu thương trọn vẹn 🐾<br>Địa chỉ: 348 Nguyễn Trãi Trung Văn Nam Từ Liêm <br>Số điện thoại:
+      0869.829.725 <br>© 2026 PetDerma Care <br> All rights reserved.</p>
+  </footer>
+
+  <!-- FLOATING CTA -->
+  <button class="float-cta" onclick="scrollToForm()">🛒 MUA NGAY</button>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">✅ Đặt hàng thành công! Chúng tôi sẽ liên hệ sớm.</div>
+
+  <script>
+    const API = 'https://provinces.open-api.vn/api';
+    const selTinh = document.getElementById('sel-tinh');
+    const selHuyen = document.getElementById('sel-huyen');
+    const selXa = document.getElementById('sel-xa');
+    const wrapTinh = document.getElementById('wrap-tinh');
+    const wrapHuyen = document.getElementById('wrap-huyen');
+    const wrapXa = document.getElementById('wrap-xa');
+
+    // ── Combo data (giá bán, giá cost, ship) ──
+    const COMBO_DATA = {
+      '1chai': {
+        label: 'PetDerma Care Spray – 1 chai 500ml',
+        giaBan: 219000,
+        giaCost: 45000,
+        ship: 20000,
+        img: './img/9.png',
+        imgLabel: '1 chai PetDerma Care Spray 500ml – 199.000đ'
+      },
+      '2chai': {
+        label: 'PetDerma Care Spray – 2 chai 500ml + Sữa tắm thú cưng',
+        giaBan: 369000,
+        giaCost: 120000,
+        ship: 0,
+        img: './img/2 chai.png', // 👉 thay bằng URL ảnh combo 2 chai
+        imgLabel: '2 chai + Tặng 1 sữa tắm thú cưng – 369.000đ'
+      },
+      '3chai': {
+        label: 'PetDerma Care Spray – 3 chai 500ml + Xịt ve rận',
+        giaBan: 499000,
+        giaCost: 170000,
+        ship: 0,
+        img: './img/3 chai.png', // 👉 thay bằng URL ảnh combo 3 chai
+        imgLabel: '3 chai + Tặng 1 chai xịt ve rận – 499.000đ'
+      }
+    };
+
+    // ── Combo image preview ──
+    function updateComboImage() {
+      const checked = document.querySelector('input[name=combo]:checked');
+      if (!checked) return;
+      const key = checked.value;
+      const data = COMBO_DATA[key];
+      const wrap = document.getElementById('combo-img-wrap');
+      const img = document.getElementById('combo-img');
+      const lbl = document.getElementById('combo-img-label');
+
+      if (data.img) {
+        img.src = data.img;
+        img.alt = data.imgLabel;
+        lbl.textContent = data.imgLabel;
+        wrap.classList.add('visible');
+      } else {
+        // Placeholder khi chưa có ảnh thật
+        img.src = `https://placehold.co/440x260/e8f5ec/1a7a3c?text=${encodeURIComponent(data.imgLabel)}`;
+        img.alt = data.imgLabel;
+        lbl.textContent = data.imgLabel;
+        wrap.classList.add('visible');
+      }
+    }
+
+    // Gắn sự kiện cho tất cả radio combo
+    document.querySelectorAll('input[name=combo]').forEach(radio => {
+      radio.addEventListener('change', updateComboImage);
+    });
+
+    // Hiện ảnh ngay khi tải trang (combo mặc định)
+    updateComboImage();
+
+    // ── Helpers ──
+    function setLoading(wrap, on) {
+      on ? wrap.classList.add('select-loading') : wrap.classList.remove('select-loading');
+    }
+    function resetSelect(sel, placeholder) {
+      sel.innerHTML = `<option value="">${placeholder}</option>`;
+      sel.disabled = true;
+    }
+    function fillSelect(sel, items, valKey, labelKey) {
+      items.forEach(item => {
+        const o = document.createElement('option');
+        o.value = item[valKey];
+        o.textContent = item[labelKey];
+        sel.appendChild(o);
+      });
+      sel.disabled = false;
+    }
+
+    // ── Load tỉnh on init ──
+    (async () => {
+      setLoading(wrapTinh, true);
+      try {
+        const res = await fetch(`${API}/?depth=1`);
+        const data = await res.json();
+        data.sort((a, b) => a.name.localeCompare(b.name, 'vi'));
+        fillSelect(selTinh, data, 'code', 'name');
+      } catch (e) {
+        selTinh.innerHTML = '<option value="">Lỗi tải dữ liệu</option>';
+      } finally {
+        setLoading(wrapTinh, false);
+      }
+    })();
+
+    // ── Tỉnh changed → load huyện ──
+    async function onTinhChange() {
+      resetSelect(selHuyen, 'Quận / Huyện');
+      resetSelect(selXa, 'Phường / Xã');
+      const code = selTinh.value;
+      if (!code) return;
+      setLoading(wrapHuyen, true);
+      try {
+        const res = await fetch(`${API}/p/${code}?depth=2`);
+        const data = await res.json();
+        const districts = (data.districts || []).sort((a, b) => a.name.localeCompare(b.name, 'vi'));
+        fillSelect(selHuyen, districts, 'code', 'name');
+      } catch (e) {
+        selHuyen.innerHTML = '<option value="">Lỗi tải dữ liệu</option>';
+        selHuyen.disabled = false;
+      } finally {
+        setLoading(wrapHuyen, false);
+      }
+    }
+
+    // ── Huyện changed → load xã ──
+    async function onHuyenChange() {
+      resetSelect(selXa, 'Phường / Xã');
+      const code = selHuyen.value;
+      if (!code) return;
+      setLoading(wrapXa, true);
+      try {
+        const res = await fetch(`${API}/d/${code}?depth=2`);
+        const data = await res.json();
+        const wards = (data.wards || []).sort((a, b) => a.name.localeCompare(b.name, 'vi'));
+        fillSelect(selXa, wards, 'code', 'name');
+      } catch (e) {
+        selXa.innerHTML = '<option value="">Lỗi tải dữ liệu</option>';
+        selXa.disabled = false;
+      } finally {
+        setLoading(wrapXa, false);
+      }
+    }
+
+    // ── Scroll & Toast ──
+    function scrollToForm() {
+      document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' });
+    }
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 4000);
+    }
+
+    // ── Submit ──
+    const SHEET_URL = 'https://script.google.com/macros/s/AKfycby5k_psX4rOS0t2UM53g3O23FApgP0r8cM41bR9Moa8J8krpmQIXXyJ-LqoNVAr_zUR/exec';
+
+    async function submitOrder() {
+      const name = document.getElementById('fname').value.trim();
+      const phone = document.getElementById('fphone').value.trim();
+      const tinhTxt = selTinh.options[selTinh.selectedIndex]?.text || '';
+      const huyenTxt = selHuyen.options[selHuyen.selectedIndex]?.text || '';
+      const xaTxt = selXa.options[selXa.selectedIndex]?.text || '';
+      const street = document.getElementById('fstreet').value.trim();
+      const note = document.getElementById('fnote').value.trim();
+      const comboEl = document.querySelector('input[name=combo]:checked');
+      const comboKey = comboEl?.value || '2chai';
+      const comboInfo = COMBO_DATA[comboKey];
+
+      if (!name) { alert('Vui lòng nhập họ và tên!'); return; }
+      if (!phone) { alert('Vui lòng nhập số điện thoại!'); return; }
+      if (!selTinh.value) { alert('Vui lòng chọn Tỉnh / Thành phố!'); return; }
+      if (!selHuyen.value) { alert('Vui lòng chọn Quận / Huyện!'); return; }
+      if (!selXa.value) { alert('Vui lòng chọn Phường / Xã!'); return; }
+
+      const address = [xaTxt, huyenTxt, tinhTxt].filter(Boolean).join(', ')
+        + (street ? ` – ${street}` : '');
+
+      const btn = document.getElementById('btn-submit');
+      btn.innerHTML = '⏳ Đang gửi...';
+      btn.disabled = true;
+
+      // ── Payload đầy đủ cho Google Sheet ──
+      const now = new Date();
+      const thoiGian = now.toLocaleString('vi-VN', {
+        day: '2-digit', month: '2-digit', year: 'numeric',
+        hour: '2-digit', minute: '2-digit', second: '2-digit'
+      });
+
+      const payload = {
+        thoiGian,                          // Thời gian
+        ten: name,                          // Tên
+        sdt: "'"+phone,                         // SĐT
+        diaChi: address,                    // Địa chỉ
+        sanPham: comboInfo.label,           // Sản phẩm
+        giaBan: comboInfo.giaBan,           // Giá bán
+        giaCost: comboInfo.giaCost,         // Giá cost
+        ship: comboInfo.ship,               // Ship
+        ghiChu: note                        // Ghi chú (bonus)
+      };
+
+      const resetBtn = () => {
+        setTimeout(() => {
+          btn.innerHTML = '🛒 ĐẶT HÀNG NGAY';
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 3000);
+      };
+
+      const clearForm = () => {
+        document.getElementById('fname').value = '';
+        document.getElementById('fphone').value = '';
+        document.getElementById('fstreet').value = '';
+        document.getElementById('fnote').value = '';
+        selTinh.value = ''; onTinhChange();
+        btn.innerHTML = '✅ ĐẶT HÀNG THÀNH CÔNG';
+        btn.style.background = '#2d9e55';
+      };
+
+      if (SHEET_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL') {
+        await new Promise(r => setTimeout(r, 800));
+        showToast('✅ Đặt hàng thành công! Chúng tôi sẽ liên hệ bạn sớm.');
+        clearForm();
+        resetBtn();
+        return;
+      }
+
+      try {
+        await fetch(SHEET_URL, {
+          method: 'POST', mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        showToast('✅ Đặt hàng thành công! Chúng tôi sẽ liên hệ bạn sớm.');
+        clearForm();
+      } catch (e) {
+        showToast('❌ Gửi thất bại, vui lòng thử lại!');
+      } finally {
+        resetBtn();
+      }
+    }
+  </script>
+</body>
+
+</html>
