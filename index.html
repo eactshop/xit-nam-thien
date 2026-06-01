@@ -13,7 +13,7 @@
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
         n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
       };
       if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
       n.queue = []; t = b.createElement(e); t.async = !0;
@@ -1681,10 +1681,12 @@
     // ── Đọc UTM từ URL (lưu vào sessionStorage để giữ qua redirect) ──
     (function () {
       const p = new URLSearchParams(window.location.search);
-      const keys = ['utm_campaign', 'utm_content', 'utm_source', 'utm_medium', 'utm_term', 'fbclid'];
+      const keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_campaign_id', 'utm_adset_id', 'utm_ad_id', 'utm_content', 'utm_term', 'fbclid'];
       keys.forEach(k => {
         if (p.get(k)) sessionStorage.setItem(k, p.get(k));
       });
+      // Lưu landing URL
+      sessionStorage.setItem('landing_url', window.location.href);
     })();
 
     function getUtm(key) {
@@ -1692,7 +1694,7 @@
     }
 
     // ── Submit ──
-    const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzBNZFaL7s18EXSXERdTF1Pno8SAk-yQk2Gfr4yeFIMAoNlDlyydr8EIEqpuf83lf_Z/exec';
+    const SHEET_URL = 'https://script.google.com/macros/s/AKfycbycLZ4R5zQeNciZ0uOZ84c-vdx1RRKAlZ5jw47zEksn-i2rAZXtfu3uIq4Cst-JyeA/exec';
 
     async function submitOrder() {
       const name = document.getElementById('fname').value.trim();
@@ -1736,8 +1738,16 @@
         giaCost: comboInfo.giaCost,         // Giá cost
         ship: comboInfo.ship,               // Ship
         ghiChu: note,                       // Ghi chú
-        camp: getUtm('utm_campaign'),       // Tên camp FB (utm_campaign)
-        adId: getUtm('utm_content')         // ID quảng cáo FB (utm_content)
+        utm_source: getUtm('utm_source'),           // utm_source
+        utm_medium: getUtm('utm_medium'),           // utm_medium
+        utm_campaign: getUtm('utm_campaign'),       // utm_campaign
+        utm_campaign_id: getUtm('utm_campaign_id'), // utm_campaign_id
+        utm_adset_id: getUtm('utm_adset_id'),       // utm_adset_id
+        utm_ad_id: getUtm('utm_ad_id'),             // utm_ad_id
+        utm_content: getUtm('utm_content'),         // utm_content
+        utm_term: getUtm('utm_term'),               // utm_term
+        fbclid: getUtm('fbclid'),                   // fbclid
+        landing_url: getUtm('landing_url')          // landing_url
       };
 
       const resetBtn = () => {
@@ -1758,22 +1768,19 @@
         btn.style.background = '#2d9e55';
       };
 
-      if (SHEET_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL') {
-        await new Promise(r => setTimeout(r, 800));
-        showToast('✅ Đặt hàng thành công! Chúng tôi sẽ liên hệ bạn sớm.');
-        clearForm();
-        resetBtn();
-        return;
-      }
-
       try {
-        await fetch(SHEET_URL, {
-          method: 'POST', mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
+        const res = await fetch(SHEET_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain' },
           body: JSON.stringify(payload)
         });
-        showToast('✅ Đặt hàng thành công! Chúng tôi sẽ liên hệ bạn sớm.');
-        clearForm();
+        const result = await res.json();
+        if (result.status === 'ok') {
+          showToast('✅ Đặt hàng thành công! Chúng tôi sẽ liên hệ bạn sớm.');
+          clearForm();
+        } else {
+          showToast('❌ Lỗi: ' + result.message);
+        }
       } catch (e) {
         showToast('❌ Gửi thất bại, vui lòng thử lại!');
       } finally {
